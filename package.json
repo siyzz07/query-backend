@@ -1,0 +1,42 @@
+{
+  "name": "query-backend",
+  "version": "1.0.0",
+  "description": "Express + TypeScript + SQLite backend for Console Board",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@google/genai": "^2.16.0",
+    "@langchain/community": "^0.0.57",
+    "@langchain/core": "^0.1.62",
+    "@langchain/google-genai": "^0.0.12",
+    "@langchain/mongodb": "^0.0.2",
+    "bcryptjs": "^2.4.3",
+    "bullmq": "^6.0.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ioredis": "^6.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "langchain": "^0.1.36",
+    "mongoose": "^8.3.0",
+    "nodemailer": "^9.0.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.12.12",
+    "@types/nodemailer": "^8.0.1",
+    "rimraf": "^5.0.7",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "author": "",
+  "license": "ISC"
+}
