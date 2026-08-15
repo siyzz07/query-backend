@@ -13,6 +13,6 @@ ENV NODE_ENV=production
 COPY package*.json ./
 RUN npm ci --omit=dev --legacy-peer-deps
 COPY --from=builder /usr/src/app/dist ./dist
-EXPOSE 7000
+# EXPOSE 7000
 USER node
 CMD ["node", "dist/index.js"]
