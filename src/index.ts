@@ -36,6 +36,7 @@ app.use('/api/logs', logRoutes);
 app.use('/super-admin',SuperAdminRoutes)
 app.use("/api/query",QueryRouter);
 
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', uptime: process.uptime() });
