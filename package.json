@@ -4,7 +4,7 @@
   "description": "Express + TypeScript + SQLite backend for Console Board",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "node --max-old-space-size=450 node_modules/typescript/bin/tsc",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "clean": "rimraf dist"
