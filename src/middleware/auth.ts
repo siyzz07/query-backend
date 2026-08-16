@@ -10,10 +10,9 @@ export interface AuthenticatedRequest extends Request {
 }
 
 export function authenticateToken(req: AuthenticatedRequest, res: Response, next: NextFunction) {
-  const authHeader = req.headers['authorization'];
-  let token = authHeader && authHeader.split(' ')[1];
+  let token: string | undefined;
 
-  if (!token && req.headers.cookie) {
+  if (req.headers.cookie) {
     const cookies = Object.fromEntries(
       req.headers.cookie.split(';').map(cookie => {
         const [key, value] = cookie.trim().split('=');
