@@ -1,5 +1,5 @@
 export interface IDocumentService {
-  getDocuments(userId: string): Promise<any[]>;
+  getDocuments(email?: string): Promise<any[]>;
   createDocument(payload: {
     name: string;
     fileName: string;

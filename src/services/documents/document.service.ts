@@ -31,8 +31,12 @@ export class DocumentService implements IDocumentService {
   }
 
   // get the documents of the vendor
-  getDocuments = async (userId: string): Promise<any[]> => {
-    const user = await this.userRepository.findById(userId);
+  getDocuments = async (email?: string): Promise<any[]> => {
+    if (!email) {
+      throw new AppError('Email parameter is required', STATUS_CODES.BAD_REQUEST);
+    }
+    const user = await this.userRepository.findByEmail(email);
+
     if (!user) {
       throw new AppError('User not found', STATUS_CODES.NOT_FOUND);
     }

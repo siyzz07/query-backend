@@ -12,11 +12,9 @@ export class DocumentController {
 
   getDocuments = async (req: AuthenticatedRequest, res: Response) => {
     try {
-      const userId = req.user?.id;
-      if (!userId) {
-        return res.status(401).json({ error: 'Unauthorized' });
-      }
-      const result = await this.documentService.getDocuments(String(userId));
+      
+      const email = req.query.email as string | undefined;
+      const result = await this.documentService.getDocuments( email);
       res.json(result);
     } catch (err: any) {
       res.status(500).json({ error: err.message || 'Failed to retrieve documents' });
